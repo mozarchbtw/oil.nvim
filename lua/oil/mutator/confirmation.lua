@@ -71,6 +71,8 @@ M.show = vim.schedule_wrap(function(actions, should_confirm, cb)
   -- Create the buffer
   local bufnr = vim.api.nvim_create_buf(false, true)
   vim.bo[bufnr].bufhidden = "wipe"
+  vim.bo[bufnr].filetype = "oil_preview"
+  vim.bo[bufnr].syntax = "oil_preview"
   local lines = {}
   local max_line_width = 0
   for _, action in ipairs(actions) do
